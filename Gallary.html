@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link href="./output.css" rel="stylesheet">  
+    <title> AY's Site</title>  
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .marquee-inner {
+            animation: marqueeScroll 35s linear infinite;
+        }
+
+        @keyframes marqueeScroll {
+            0% {
+                transform: translateX(0%);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+        @keyframes marqueeScroll {
+        0% {
+            transform: translateX(0%);
+        }
+
+        100% {
+            transform: translateX(-50%);
+        }
+        }
+
+        .marquee-inner {
+            animation: marqueeScroll 25s linear infinite;
+        }
+
+        .marquee-reverse {
+            animation-direction: reverse;
+        }
+        @keyframes fade-out{
+           to { opacity: 0;}
+        }
+        .header-text-animation, #follow-animation, #gallary-animation{
+            animation: fade-out linear;
+            animation-timeline: view();
+            animation-range: exit -200px;
+        }   
+        
+        .header-image-animation, #booking-animation {
+            /* transform-origin: top; */
+
+            animation: header-image-animation linear;
+            animation-timeline: view();
+            animation-range: exit;
+        }
+
+        @keyframes header-image-animation {
+            25% { opacity: 1;}
+            80%, 100% { opacity: 0; scale: 2;}
+        }
+        @keyframes appear{   
+            to {
+                opacity: 1;
+                scale: 1; 
+            }
+        }
+
+        @keyframes exit{   
+            to {
+                opacity: 0.4;
+                scale: 0.4; 
+            }
+        }
+
+        #booking-animation,  {
+            animation: exit linear;
+            animation-timeline: view();
+            animation-range: exit -50px;
+        }
+
+        #booking-animation, #follow-animation, #gallary-animation {
+            opacity: 0; scale: 0.5; 
+            animation: appear linear forwards;
+            animation-timeline: view();
+            animation-range: entry 4px;
+        }
+    </style>    
+</head>
+<body>      
+                            <!-- Hero Section and Nav Bar -->
+    <section class="">      
+        <div class="relative flex flex-col items-center text-white  text-sm ">
+            <img src="./image/gallery3.png" alt="hero-bg" class="header-image-animation absolute w-full h-130 pointer-events-none -z-10">
+            <div class="bg-black/50 bg-opacity-80 h-130 w-full pb-5">
+                <nav class="md:fixed md:top-2 md:z-20 md:backdrop-blur-3xl md:backdrop-brightness-36  md:rounded-full flex items-center justify-between p-4 md:px-16 lg:px-24 xl:px-32 py-5 w-full">
+                    <a href="#" >
+                       <img src="./image/logo.png" class="w-12 h-7" alt="logo"> 
+                    </a>
+                    <div id="menu" class="max-md:absolute max-md:top-0 max-md:z-10 max-md:left-0 max-md:w-0 max-md:transition-all max-md:duration-300 max-md:overflow-hidden max-md:h-full max-md:bg-black/50 max-md:backdrop-blur max-md:flex-col max-md:justify-center flex items-center gap-8 font-medium">                        
+                        <!-- <div class="relative group flex items-center gap-1 cursor-pointer">
+                            <span>Home</span>
+                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="m4.5 7.2 3.793 3.793a1 1 0 0 0 1.414 0L13.5 7.2" stroke="white" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            <div  class=" absolute bg-slate-800 font-normal flex flex-col gap-2 w-max rounded-lg p-4 top-36 left-0 opacity-0 -translate-y-full group-hover:top-44 group-hover:opacity-100 transition-all duration-300">
+                                <a href="#services" class="hover:translate-x-1 hover:text-slate-500 transition-all">
+                                    Our Services
+                                </a>
+                                <a href="#store" class="hover:translate-x-1 hover:text-slate-500 transition-all">
+                                    Store
+                                </a>
+                                <a href="#booking" class="hover:translate-x-1 hover:text-slate-500 transition-all">
+                                    Booking
+                                </a>
+                                <a href="#about" class="hover:translate-x-1 hover:text-slate-500 transition-all">
+                                    About Us
+                                </a>
+                            </div>
+                        </div> -->
+                        <a href="./index.html" class="hover:text-amber-400 transition duration-500">
+                            Home
+                        </a>
+                        <a href="./Hair Styles.html" class="hover:text-amber-400 transition duration-500">
+                            Hair Styles
+                        </a>
+                        <a href="./Store.html" class="hover:text-amber-400 transition duration-500">
+                            Store
+                        </a>                         
+                        <a href="./Gallary.html" class="md:hidden text-amber-400 hover:text-slate-200 hover:text-slate-200  transition duration-500">
+                            Gallary
+                        </a>                            
+                        <button id="close-menu"
+                            class="md:hidden bg-gray-900 hover:bg-gray-800 text-white p-2 rounded-md aspect-square font-medium transition">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 6 6 18" />
+                                <path d="m6 6 12 12" />
+                            </svg>
+                        </button>
+                    </div>
+                    <button
+                        class="hidden md:block bg-gradient-to-r from-indigo-700 to-black/200 hover:bg-gradient-to-br hover:from-purple-700/80 hover:to-black/500 text-white shadow-2xl px-6 py-2.5 rounded-full font-medium transition duration-500">
+                        <a href="./Gallary.html">
+                            Gallary
+                        </a>                        
+                    </button>
+
+                    <button id="open-menu"
+                        class="md:hidden bg-gray-900 hover:bg-gray-800 text-white p-2 rounded-md aspect-square font-medium transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 12h16" />
+                            <path d="M4 18h16" />
+                            <path d="M4 6h16" />
+                        </svg>
+                    </button>
+                </nav>    
+                            <!-- Heading Discription -->
+                <div class="header-text-animation flex flex-col items-center justify-center text-center px-8 md:my-12 my-4 md:pt-15">
+                    <h1 class="text-6xl  font-extrabold text-pretty tracking-wider   mt-8 bg-gradient-to-r from-white to-[#748298] text-transparent bg-clip-text">
+                       Our Gallary
+                    </h1>                   
+                </div>                
+             
+                          <!-- Image scrooler  -->
+                <div class="overflow-hidden w-full mt-18 relative max-w-5xl mx-auto  select-none ">
+                    <span  class="absolute left-0 top-0 lg:rounded-l-3xl h-full w-20 z-10 pointer-events-none bg-gradient-to-r from-zinc-900 to-transparent">  </span> <!-- ========== left Border shade of Scrooler ========== -->                
+                    <div class="marquee-inner flex will-change-transform min-w-[200%] py-3">
+                        <div class="flex py-4" id="logo-container">
+                        </div>
+                    </div>
+                    <span class="absolute right-0 top-0 lg:rounded-r-3xl h-full w-20 md:w-40 z-10 pointer-events-none bg-gradient-to-l from-zinc-900 to-transparent">  </span> <!-- ========== Right Border shade of Scrooler ========== -->                
+                </div> 
+            </div>                                 
+        </div>
+    </section>
+             
+                                <!-- Shop Introduction Section -->
+    <section id="about"  class="">      
+        <div class="relative flex flex-col items-center text-white  text-sm ">
+            <img src="./image/gallery1.png" alt="hero-bg" class="absolute w-full md:h-200 h-330 pointer-events-none -z-10">
+            <div class="bg-black/80 bg-opacity-50 md:h-200 h-330 w-full pb-5">
+                <div class="container mx-auto px-6 md:py-24 py-12 max-md:pb-24 flex flex-col md:grid md:grid-cols-2 gap-x-6 md:items-center max-md:items-start justify-center">                                
+            <div class="z-10 order-2 md:order-1 min-md:-translate-y-20  transition duration-500">       <!-- Images  -->
+                <img src="./image/barber-frame.png" alt="" class="relative lg:w-90 w-64 lg:h-120 h-100 shadow-lg shadow-white rounded-lg">
+                <img src="./image/blog1.png" alt="" class="absolute lg:w-90 w-64 lg:h-120 h-100 rounded-lg shadow-lg shadow-white transform -translate-y-80 translate-x-1/4  transition duration-500" > 
+                <div class=" absolute lg:w-90 w-60 lg:h-120 h-110 border-dashed border-2 border-amber-400 transform -translate-y-90 translate-x-32  transition duration-500"></div>             
+            </div>
+                               <!-- About the shop -->
+            <div class="z-10 md:p-7 px-14 py-6 max-md:mb-24 order-1 md:order-2 flex flex-col min-md:bg-gradient-to-tl from-black via-zinc-800 to-black border-3 max-md:border-r-amber-200 max-md:border-b-amber-200 max-md:border-t-0 max-md:border-l-0 min-md:border-amber-400 min-md:rounded-tl-none min-md:rounded-4xl">
+                <div class="pt-5 pb-12 md:text-4xl text-3xl text-amber-400 max-md:text-slate-200  font-serif flex justify-center items-end ">Ay's Cut <span class="w-25 h-0.5 bg-amber-400 ml-4"></span></div>
+                <div class="grid grid-cols-2 items-center gap-y-17 gap-x-14 text-slate-800">
+                    <div class="flex flex-col justify-end space-y-2 hover:bg-gradient-to-b from-slate-900 to-zinc-900 shadow-xl hover:shadow-amber-950 rounded-2xl px-6 py-3 hover:scale-105 transition duration-600">
+                        <span class="text-2xl text-slate-200 font-serif">Opening Hours</span>
+                        <span class="text-xl text-amber-400 ">8:00 AM</span>
+                    </div>
+                    <div class="flex flex-col justify-end space-y-2 hover:bg-gradient-to-b from-slate-900 to-zinc-900 shadow-2xl hover:shadow-amber-950 rounded-2xl px-6 py-3 hover:scale-105 transition duration-600">
+                        <span class="text-2xl text-slate-200 font-serif">Closing Hours</span>
+                        <span class="text-xl text-amber-400">10:00 PM</span>
+                    </div>
+                    <div class="flex flex-col justify-end space-y-2 hover:bg-gradient-to-b from-slate-900 to-zinc-900 shadow-2xl hover:shadow-amber-950 rounded-2xl px-6 py-3 hover:scale-105 transition duration-600">
+                        <span class="text-2xl text-slate-200 font-serif">Address</span>
+                        <span class="text-xl text-amber-400 text-pretty">Estate Gate, Okada. Besides the Car Park </span>
+                    </div>
+                    <div class="flex flex-col justify-end space-y-2 hover:bg-gradient-to-b from-slate-900 to-zinc-900 shadow-2xl hover:shadow-amber-950 rounded-2xl px-6 py-3 hover:scale-105 transition duration-600">
+                        <span class="text-2xl text-slate-200 font-serif">Contact Us on Whatsapp</span>
+                        <span class="text-xl text-amber-400">07058748480</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+            </div>                                 
+        </div>
+    </section>
+
+                    <!-- Gallary 1 -->
+    <section class="bg-slate-100">
+        <div id="gallary-animation"  class="container mx-auto px-6 pt-24">
+            <h1 class="text-3xl font-semibold text-center mx-auto">Our Latest Creations </h1>
+            <p class="pb-12 text-sm text-slate-500 text-center mt-2 max-w-lg mx-auto">A visual collection of our most recent works - each piece crafted with intention, emotion, and style.</p>
+            <div class="grid gap-4">
+                <div>
+                    <img class="h-auto min-w-full rounded-lg" src="./image/gallery2.png" alt="">
+                </div>
+                <div class="grid grid-cols-5 gap-4">
+                    <div>
+                        <img class="h-auto max-w-full rounded-lg" src="./image/gallery1.png" alt="">
+                    </div>
+                    <div>
+                        <img class="h-auto max-w-full rounded-lg" src="./image/gallery3.png" alt="">
+                    </div>
+                    <div>
+                        <img class="h-auto max-w-full rounded-lg" src="./image/gallery4.png" alt="">
+                    </div>
+                    <div>
+                        <img class="h-auto max-w-full rounded-lg" src="./image/gallery5.png" alt="">
+                    </div>
+                    <div>
+                        <img class="h-auto max-w-full rounded-lg" src="./image/blog.png" alt="">
+                    </div>
+                </div>
+            </div>            
+        </div>
+    </section>
+
+                        <!-- Gallary 2 --> 
+    <section class="bg-slate-100">
+        <div class="container mx-auto px-6 pt-12">
+            <div class="flex flex-wrap items-center justify-center  gap-4 max-w-5xl mx-auto">
+                <div class="relative group rounded-lg overflow-hidden">
+                    <img src="./image/barber-frame.png" alt="image" class="size-56 object-cover object-top" />
+                    <div class="absolute inset-0 flex flex-col justify-end p-4 text-white bg-black/50 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                        <h1 class="text-xl font-medium">Image Title</h1>
+                        <a href="#" class="flex items-center gap-1 text-sm text-white/70">
+                            Show More
+                            <svg width="16" height="16" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8.125 1.625H11.375V4.875" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M5.41602 7.58333L11.3743 1.625" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M9.75 7.04167V10.2917C9.75 10.579 9.63586 10.8545 9.4327 11.0577C9.22953 11.2609 8.95398 11.375 8.66667 11.375H2.70833C2.42102 11.375 2.14547 11.2609 1.9423 11.0577C1.73914 10.8545 1.625 10.579 1.625 10.2917V4.33333C1.625 4.04602 1.73914 3.77047 1.9423 3.5673C2.14547 3.36414 2.42102 3.25 2.70833 3.25H5.95833" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="relative group rounded-lg overflow-hidden">
+                    <img src="./image/barber-work.png" alt="image" class="size-56 object-cover object-top" />
+                    <div class="absolute inset-0 flex flex-col justify-end p-4 text-white bg-black/50 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                        <h1 class="text-xl font-medium">Image Title</h1>
+                        <a href="#" class="flex items-center gap-1 text-sm text-white/70">
+                            Show More
+                            <svg width="16" height="16" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8.125 1.625H11.375V4.875" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M5.41602 7.58333L11.3743 1.625" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M9.75 7.04167V10.2917C9.75 10.579 9.63586 10.8545 9.4327 11.0577C9.22953 11.2609 8.95398 11.375 8.66667 11.375H2.70833C2.42102 11.375 2.14547 11.2609 1.9423 11.0577C1.73914 10.8545 1.625 10.579 1.625 10.2917V4.33333C1.625 4.04602 1.73914 3.77047 1.9423 3.5673C2.14547 3.36414 2.42102 3.25 2.70833 3.25H5.95833" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="relative group rounded-lg overflow-hidden">
+                    <img src="./image/blog2.png" alt="image" class="size-56 object-cover object-top" />
+                    <div class="absolute inset-0 flex flex-col justify-end p-4 text-white bg-black/50 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                        <h1 class="text-xl font-medium">Image Title</h1>
+                        <a href="#" class="flex items-center gap-1 text-sm text-white/70">
+                            Show More
+                            <svg width="16" height="16" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8.125 1.625H11.375V4.875" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M5.41602 7.58333L11.3743 1.625" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M9.75 7.04167V10.2917C9.75 10.579 9.63586 10.8545 9.4327 11.0577C9.22953 11.2609 8.95398 11.375 8.66667 11.375H2.70833C2.42102 11.375 2.14547 11.2609 1.9423 11.0577C1.73914 10.8545 1.625 10.579 1.625 10.2917V4.33333C1.625 4.04602 1.73914 3.77047 1.9423 3.5673C2.14547 3.36414 2.42102 3.25 2.70833 3.25H5.95833" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="relative group rounded-lg overflow-hidden">
+                    <img src="./image/blog3.png" alt="image" class="size-56 object-cover object-top" />
+                    <div class="absolute inset-0 flex flex-col justify-end p-4 text-white bg-black/50 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                        <h1 class="text-xl font-medium">Image Title</h1>
+                        <a href="#" class="flex items-center gap-1 text-sm text-white/70">
+                            Show More
+                            <svg width="16" height="16" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8.125 1.625H11.375V4.875" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M5.41602 7.58333L11.3743 1.625" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M9.75 7.04167V10.2917C9.75 10.579 9.63586 10.8545 9.4327 11.0577C9.22953 11.2609 8.95398 11.375 8.66667 11.375H2.70833C2.42102 11.375 2.14547 11.2609 1.9423 11.0577C1.73914 10.8545 1.625 10.579 1.625 10.2917V4.33333C1.625 4.04602 1.73914 3.77047 1.9423 3.5673C2.14547 3.36414 2.42102 3.25 2.70833 3.25H5.95833" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="relative group rounded-lg overflow-hidden">
+                    <img src="./image/home-blog1.png" alt="image" class="size-56 object-cover object-top" />
+                    <div class="absolute inset-0 flex flex-col justify-end p-4 text-white bg-black/50 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                        <h1 class="text-xl font-medium">Image Title</h1>
+                        <a href="#" class="flex items-center gap-1 text-sm text-white/70">
+                            Show More
+                            <svg width="16" height="16" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8.125 1.625H11.375V4.875" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M5.41602 7.58333L11.3743 1.625" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M9.75 7.04167V10.2917C9.75 10.579 9.63586 10.8545 9.4327 11.0577C9.22953 11.2609 8.95398 11.375 8.66667 11.375H2.70833C2.42102 11.375 2.14547 11.2609 1.9423 11.0577C1.73914 10.8545 1.625 10.579 1.625 10.2917V4.33333C1.625 4.04602 1.73914 3.77047 1.9423 3.5673C2.14547 3.36414 2.42102 3.25 2.70833 3.25H5.95833" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="relative group rounded-lg overflow-hidden">
+                    <img src="./image/home-blog2.png" alt="image" class="size-56 object-cover object-top" />
+                    <div class="absolute inset-0 flex flex-col justify-end p-4 text-white bg-black/50 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                        <h1 class="text-xl font-medium">Image Title</h1>
+                        <a href="#" class="flex items-center gap-1 text-sm text-white/70">
+                            Show More
+                            <svg width="16" height="16" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8.125 1.625H11.375V4.875" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M5.41602 7.58333L11.3743 1.625" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M9.75 7.04167V10.2917C9.75 10.579 9.63586 10.8545 9.4327 11.0577C9.22953 11.2609 8.95398 11.375 8.66667 11.375H2.70833C2.42102 11.375 2.14547 11.2609 1.9423 11.0577C1.73914 10.8545 1.625 10.579 1.625 10.2917V4.33333C1.625 4.04602 1.73914 3.77047 1.9423 3.5673C2.14547 3.36414 2.42102 3.25 2.70833 3.25H5.95833" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="relative group rounded-lg overflow-hidden">
+                    <img src="./image/gallery1.png" alt="image" class="size-56 object-cover object-top" />
+                    <div class="absolute inset-0 flex flex-col justify-end p-4 text-white bg-black/50 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                        <h1 class="text-xl font-medium">Image Title</h1>
+                        <a href="#" class="flex items-center gap-1 text-sm text-white/70">
+                            Show More
+                            <svg width="16" height="16" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8.125 1.625H11.375V4.875" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M5.41602 7.58333L11.3743 1.625" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M9.75 7.04167V10.2917C9.75 10.579 9.63586 10.8545 9.4327 11.0577C9.22953 11.2609 8.95398 11.375 8.66667 11.375H2.70833C2.42102 11.375 2.14547 11.2609 1.9423 11.0577C1.73914 10.8545 1.625 10.579 1.625 10.2917V4.33333C1.625 4.04602 1.73914 3.77047 1.9423 3.5673C2.14547 3.36414 2.42102 3.25 2.70833 3.25H5.95833" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="relative group rounded-lg overflow-hidden">
+                    <img src="./image/gallery2.png" alt="image" class="size-56 object-cover object-top" />
+                    <div class="absolute inset-0 flex flex-col justify-end p-4 text-white bg-black/50 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                        <h1 class="text-xl font-medium">Image Title</h1>
+                        <a href="#" class="flex items-center gap-1 text-sm text-white/70">
+                            Show More
+                            <svg width="16" height="16" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8.125 1.625H11.375V4.875" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M5.41602 7.58333L11.3743 1.625" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M9.75 7.04167V10.2917C9.75 10.579 9.63586 10.8545 9.4327 11.0577C9.22953 11.2609 8.95398 11.375 8.66667 11.375H2.70833C2.42102 11.375 2.14547 11.2609 1.9423 11.0577C1.73914 10.8545 1.625 10.579 1.625 10.2917V4.33333C1.625 4.04602 1.73914 3.77047 1.9423 3.5673C2.14547 3.36414 2.42102 3.25 2.70833 3.25H5.95833" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>            
+        </div>
+    </section>
+
+		            	<!-- Form (Booking Section)  -->
+    <section id="booking"  class="bg-slate-100">
+    <div id="booking-animation"  class="container mx-auto px-6 pt-24 pb-8 flex flex-col items-center">
+        <div class="mb-8 text-3xl text-slate-800 font-bolder flex -space-x-4 items-end">
+            Make yr Reservations <span class="w-25 h-0.5 bg-amber-200 ml-4"></span>
+        </div>
+
+        <!-- Added an ID for easy targeting -->
+        <form id="bookingForm" class="w-2/3 lg:w-2/3">
+            <div class="relative z-0 w-full mb-5 group">
+                <input type="text" name="haircut_service" id="haircut_service" 
+                class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" "  />
+                <label for="haircut_service" 
+                class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-7 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+                Type of Haircut (Service)
+                </label>
+            </div>
+
+            <div class="relative z-0 w-full mb-5 group">
+                <input type="text" name="purchase_item" id="purchase_item" 
+                class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" "  />
+                <label for="purchase_item" 
+                class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-7 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+                What are you buying?
+                </label>
+            </div>  
+
+            <div class="grid md:grid-cols-2 md:gap-6">
+                <div class="relative z-0 w-full mb-5 group">
+                    <input type="text" name="first_name" id="first_name" 
+                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+                    <label for="first_name" 
+                    class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-7 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+                    First name
+                    </label>
+                </div>
+
+                <div class="relative z-0 w-full mb-5 group">
+                    <input type="text" name="last_name" id="last_name" 
+                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+                    <label for="last_name" 
+                    class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-7 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+                    Last name
+                    </label>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 md:gap-6">
+                <div class="relative z-0 w-full mb-5 group">
+                    <input type="tel" name="phone" id="phone" 
+                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+                    <label for="phone" 
+                    class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-7 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+                    WhatsApp Number
+                    </label>
+                </div>
+
+                <div class="relative z-0 w-full mb-5 group">
+                <input type="email" name="email" id="email" 
+                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
+                <label for="email" 
+                    class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-7 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+                    Email address
+                </label>
+                </div>
+            </div>
+
+            <!-- Book Now button -->
+            <button id="bookBtn" type="submit" 
+            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+            Book Now
+            </button>
+        </form>
+    </div>
+    </section>       
+ 
+                        <!-- To Do Later -->
+    <div id=""  class="w-full bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+        <div class="sm:hidden">
+            <label for="tabs" class="sr-only">Select tab</label>
+            <select id="tabs" class="bg-gray-50 border-0 border-b border-gray-200 text-gray-900 text-sm rounded-t-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                <option>ABOUT US</option>
+                <option>MEET OUR PROS</option>
+                <option>FAQ</option>
+            </select>
+        </div>
+        <ul class="hidden text-sm font-medium text-center text-gray-500 divide-x divide-gray-200 rounded-lg sm:flex dark:divide-gray-600 dark:text-gray-400 rtl:divide-x-reverse" id="fullWidthTab" data-tabs-toggle="#fullWidthTabContent" role="tablist">
+            <li class="w-full">
+                <button id="stats-tab" data-tabs-target="#stats" type="button" role="tab" aria-controls="stats" aria-selected="true" class="inline-block w-full p-4 rounded-ss-lg bg-gray-50 hover:bg-gray-100 focus:outline-none dark:bg-gray-700 dark:hover:bg-gray-600">ABOUT US</button>
+            </li>
+            <li class="w-full">
+                <button id="about-tab" data-tabs-target="#about" type="button" role="tab" aria-controls="about" aria-selected="false" class="inline-block w-full p-4 bg-gray-50 hover:bg-gray-100 focus:outline-none dark:bg-gray-700 dark:hover:bg-gray-600">MEET OUR PROS</button>
+            </li>
+            <li class="w-full">
+                <button id="faq-tab" data-tabs-target="#faq" type="button" role="tab" aria-controls="faq" aria-selected="false" class="inline-block w-full p-4 rounded-se-lg bg-gray-50 hover:bg-gray-100 focus:outline-none dark:bg-gray-700 dark:hover:bg-gray-600">FAQ</button>
+            </li>
+        </ul>
+        <div id="fullWidthTabContent" class="border-t border-gray-200 dark:border-gray-600">
+            <div class="hidden p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800" id="stats" role="tabpanel" aria-labelledby="stats-tab">
+                <dl class="grid max-w-screen-xl grid-cols-2 gap-8 p-4 mx-auto text-gray-900 sm:grid-cols-3 xl:grid-cols-6 dark:text-white sm:p-8">
+                    <div class="flex flex-col items-center justify-center">
+                        <dt class="mb-2 text-3xl font-extrabold">73M+</dt>
+                        <dd class="text-gray-500 dark:text-gray-400">Developers</dd>
+                    </div>
+                    <div class="flex flex-col items-center justify-center">
+                        <dt class="mb-2 text-3xl font-extrabold">100M+</dt>
+                        <dd class="text-gray-500 dark:text-gray-400">Public repositories</dd>
+                    </div>
+                    <div class="flex flex-col items-center justify-center">
+                        <dt class="mb-2 text-3xl font-extrabold">1000s</dt>
+                        <dd class="text-gray-500 dark:text-gray-400">Open source projects</dd>
+                    </div>
+                    <div class="flex flex-col items-center justify-center">
+                        <dt class="mb-2 text-3xl font-extrabold">1B+</dt>
+                        <dd class="text-gray-500 dark:text-gray-400">Contributors</dd>
+                    </div>
+                    <div class="flex flex-col items-center justify-center">
+                        <dt class="mb-2 text-3xl font-extrabold">90+</dt>
+                        <dd class="text-gray-500 dark:text-gray-400">Top Forbes companies</dd>
+                    </div>
+                    <div class="flex flex-col items-center justify-center">
+                        <dt class="mb-2 text-3xl font-extrabold">4M+</dt>
+                        <dd class="text-gray-500 dark:text-gray-400">Organizations</dd>
+                    </div>
+                </dl>
+            </div>
+            <div class="hidden p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800" id="about" role="tabpanel" aria-labelledby="about-tab">
+                <h2 class="mb-5 text-2xl font-extrabold tracking-tight text-gray-900 dark:text-white">We invest in the world’s potential</h2>
+                <!-- List -->
+                <ul role="list" class="space-y-4 text-gray-500 dark:text-gray-400">
+                    <li class="flex space-x-2 rtl:space-x-reverse items-center">
+                        <svg class="shrink-0 w-3.5 h-3.5 text-blue-600 dark:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
+                        </svg>
+                        <span class="leading-tight">Dynamic reports and dashboards</span>
+                    </li>
+                    <li class="flex space-x-2 rtl:space-x-reverse items-center">
+                        <svg class="shrink-0 w-3.5 h-3.5 text-blue-600 dark:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
+                        </svg>
+                        <span class="leading-tight">Templates for everyone</span>
+                    </li>
+                    <li class="flex space-x-2 rtl:space-x-reverse items-center">
+                        <svg class="shrink-0 w-3.5 h-3.5 text-blue-600 dark:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
+                        </svg>
+                        <span class="leading-tight">Development workflow</span>
+                    </li>
+                    <li class="flex space-x-2 rtl:space-x-reverse items-center">
+                        <svg class="shrink-0 w-3.5 h-3.5 text-blue-600 dark:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
+                        </svg>
+                        <span class="leading-tight">Limitless business automation</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="hidden p-4 bg-white rounded-lg dark:bg-gray-800" id="faq" role="tabpanel" aria-labelledby="faq-tab">
+                <div id="accordion-flush" data-accordion="collapse" data-active-classes="bg-white dark:bg-gray-800 text-gray-900 dark:text-white" data-inactive-classes="text-gray-500 dark:text-gray-400">
+                    <h2 id="accordion-flush-heading-1">
+                        <button type="button" class="flex items-center justify-between w-full py-5 font-medium text-left rtl:text-right text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400" data-accordion-target="#accordion-flush-body-1" aria-expanded="true" aria-controls="accordion-flush-body-1">
+                        <span>What is Flowbite?</span>
+                        <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
+                        </svg>
+                        </button>
+                    </h2>
+                    <div id="accordion-flush-body-1" class="hidden" aria-labelledby="accordion-flush-heading-1">
+                        <div class="py-5 border-b border-gray-200 dark:border-gray-700">
+                        <p class="mb-2 text-gray-500 dark:text-gray-400">Flowbite is an open-source library of interactive components built on top of Tailwind CSS including buttons, dropdowns, modals, navbars, and more.</p>
+                        <p class="text-gray-500 dark:text-gray-400">Check out this guide to learn how to <a href="/docs/getting-started/introduction/" class="text-blue-600 dark:text-blue-500 hover:underline">get started</a> and start developing websites even faster with components on top of Tailwind CSS.</p>
+                        </div>
+                    </div>
+                    <h2 id="accordion-flush-heading-2">
+                        <button type="button" class="flex items-center justify-between w-full py-5 font-medium text-left rtl:text-right text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400" data-accordion-target="#accordion-flush-body-2" aria-expanded="false" aria-controls="accordion-flush-body-2">
+                        <span>Is there a Figma file available?</span>
+                        <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
+                        </svg>
+                        </button>
+                    </h2>
+                    <div id="accordion-flush-body-2" class="hidden" aria-labelledby="accordion-flush-heading-2">
+                        <div class="py-5 border-b border-gray-200 dark:border-gray-700">
+                        <p class="mb-2 text-gray-500 dark:text-gray-400">Flowbite is first conceptualized and designed using the Figma software so everything you see in the library has a design equivalent in our Figma file.</p>
+                        <p class="text-gray-500 dark:text-gray-400">Check out the <a href="https://flowbite.com/figma/" class="text-blue-600 dark:text-blue-500 hover:underline">Figma design system</a> based on the utility classes from Tailwind CSS and components from Flowbite.</p>
+                        </div>
+                    </div>
+                    <h2 id="accordion-flush-heading-3">
+                        <button type="button" class="flex items-center justify-between w-full py-5 font-medium text-left rtl:text-right text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400" data-accordion-target="#accordion-flush-body-3" aria-expanded="false" aria-controls="accordion-flush-body-3">
+                        <span>What are the differences between Flowbite and Tailwind UI?</span>
+                        <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
+                        </svg>
+                        </button>
+                    </h2>
+                    <div id="accordion-flush-body-3" class="hidden" aria-labelledby="accordion-flush-heading-3">
+                        <div class="py-5 border-b border-gray-200 dark:border-gray-700">
+                        <p class="mb-2 text-gray-500 dark:text-gray-400">The main difference is that the core components from Flowbite are open source under the MIT license, whereas Tailwind UI is a paid product. Another difference is that Flowbite relies on smaller and standalone components, whereas Tailwind UI offers sections of pages.</p>
+                        <p class="mb-2 text-gray-500 dark:text-gray-400">However, we actually recommend using both Flowbite, Flowbite Pro, and even Tailwind UI as there is no technical reason stopping you from using the best of two worlds.</p>
+                        <p class="mb-2 text-gray-500 dark:text-gray-400">Learn more about these technologies:</p>
+                        <ul class="ps-5 text-gray-500 list-disc dark:text-gray-400">
+                            <li><a href="https://flowbite.com/pro/" class="text-blue-600 dark:text-blue-500 hover:underline">Flowbite Pro</a></li>
+                            <li><a href="https://tailwindui.com/" rel="nofollow" class="text-blue-600 dark:text-blue-500 hover:underline">Tailwind UI</a></li>
+                        </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+                         <!-- Gallary Scroller -->
+    <section id="gallary">
+    <div class="marquee-row w-full mx-auto max-w-5xl overflow-hidden relative">
+        <div class="absolute left-0 top-0 h-full w-20 z-10 pointer-events-none bg-gradient-to-r from-white to-transparent"></div>
+        <div class="marquee-inner flex transform-gpu min-w-[200%] pt-10 pb-5" id="row1"></div>
+        <div class="absolute right-0 top-0 h-full w-20 md:w-40 z-10 pointer-events-none bg-gradient-to-l from-white to-transparent"></div>
+    </div>
+
+    <div class="marquee-row w-full mx-auto max-w-5xl overflow-hidden relative">
+        <div class="absolute left-0 top-0 h-full w-20 z-10 pointer-events-none bg-gradient-to-r from-white to-transparent"></div>
+        <div class="marquee-inner marquee-reverse flex transform-gpu min-w-[200%] pt-5 pb-10" id="row2"></div>
+        <div class="absolute right-0 top-0 h-full w-20 md:w-40 z-10 pointer-events-none bg-gradient-to-l from-white to-transparent"></div>
+    </div>
+    </section>
+                         <!-- Follow Us -->
+    <section id="follow-animation" class="bg-gradient-to-br from-slate-100 to-white">
+        <div class="container mx-auto px-6 pt-18 pb-8">
+            <h1 class="mb-8 md:text-4xl text-3xl font-extrabold text-slate-700 flex items-end">FOLLOW US ON<span class="w-25 h-0.5 bg-amber-200 ml-4"></span></h1>
+                <ul class="flex justify-center space-x-12 md:space-x-18">
+                    <li class="cursor-pointer hover:transform hover:-translate-y-3 transition duration-500">
+                        <a href="#">
+                            <img src="./image/facebook.png"  class="w-20 h-20" alt="Facebook Logo">
+                        </a>
+                    </li>
+                    <li class="cursor-pointer hover:transform hover:-translate-y-3 transition duration-500">
+                        <a href="#">
+                            <img src="./image/instagram.png"  class="w-20 h-20" alt="instagram logo">
+                        </a>
+                    </li>
+                    <li class="cursor-pointer hover:transform hover:-translate-y-3 transition duration-500">
+                        <a href="#"> 
+                            <img src="./image/x.png"  class="w-20 h-20" alt="Instagram Logo">
+                        </a>
+                    </li>
+                    <li class="cursor-pointer hover:transform hover:-translate-y-3 transition duration-500">
+                        <a href="#"> 
+                            <img src="./image/tiktok.png"  class="w-20 h-20 " alt="Instagram Logo">
+                        </a>
+                    </li>
+                </ul>            
+        </div>
+    </section>
+
+			        <!-- FOOTER -->
+<footer class="bg-linear-to-tr from-slate-800 via-slate-900 to-zinc-700 rounded-lg shadow-sm m-4 dark:bg-gray-800">
+    <div class="container mx-auto pt-9 px-6 pb-12 flex max-md:flex-col justify-center items-center md:flex md:items-center md:justify-between">
+       <div class="flex flex-col max-md:items-center space-y-2">
+        <span class="text-2xl text-slate-200 hover:text-slate-400 text tracking-wider text-pretty hover:underline font-extralight transition duration-500"> Contact Us For Yr bookings and Reservations </span>       
+        <h2 class="w-fit text-md px-4 py-2 text-slate-200 hover:text-amber-200 hover:rounded-2xl shadow-xl hover:shadow-blue-900 hover:scale-103 transition duration-500">WHATSAPP: 07058748480</h2>
+        <h2 class="w-fit text-md px-4 py-2 text-slate-200 hover:text-amber-200 hover:rounded-2xl shadow-xl hover:shadow-blue-900 hover:scale-103 transition duration-500">EMAIL: ngubipaul@gmail.com</h2>
+       </div> 
+       <ul class="flex flex-wrap space-x-5 space-y-8 items-center md:mt-3 mt-6 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
+            <li>
+                <a href="#about"  class="text-md px-4 py-2 text-slate-200 hover:text-amber-200 hover:rounded-2xl shadow-xl hover:shadow-blue-900 hover:scale-103 transition duration-500">About</a>
+            </li>
+            
+            <li>
+                <a href="#services"  class="text-md px-4 py-2 text-slate-200 hover:text-amber-200 hover:rounded-2xl shadow-xl hover:shadow-blue-900 hover:scale-103 transition duration-500">Pricing Plan</a>
+            </li>
+            <li>
+                <a href="#booking"  class="text-md px-4 py-2 text-slate-200 hover:text-amber-200 hover:rounded-2xl shadow-xl hover:shadow-blue-900 hover:scale-103 transition duration-500">Book Now</a>
+            </li>
+       </ul>
+                 <!-- back to top button -->
+       <a href="#" class="text-md px-4 py-2 text-slate-200 hover:text-amber-200 hover:rounded-2xl shadow-xl hover:shadow-blue-900 hover:scale-103 transition duration-500">Back to Top</a>
+    </div>
+</footer>
+
+<!-- Script 1 -->
+    <script>
+        const menu = document.getElementById('menu');
+        const closeMenu = document.getElementById('close-menu');
+        const openMenu = document.getElementById('open-menu');
+
+        closeMenu.addEventListener('click', () => {
+            menu.classList.remove('max-md:w-full');
+            menu.classList.add('max-md:w-0');
+        });
+
+        openMenu.addEventListener('click', () => {
+            menu.classList.remove('max-md:w-0');
+            menu.classList.add('max-md:w-full');
+        });
+
+        
+
+        const logos = [
+            `<img src="./image/pricing1.png" alt="hero-bg" class="w-40 max-h-40 mx-14 rounded-lg transform translate-y-5 " >`,
+            `<img src="./image/pricing2.png" alt="hero-bg" class="w-40 max-h-40 mx-14 rounded-lg">`,
+            `<img src="./image/home-blog1.png" alt="hero-bg" class="w-40 max-h-40 mx-14 rounded-lg transform -translate-y-5">`,
+            `<img src="./image/home-blog2.png" alt="hero-bg" class="w-40 max-h-40 mx-14 rounded-lg">`
+                    ]
+
+        const logoContainer = document.getElementById('logo-container');
+
+        [...logos, ...logos].forEach((logo) => {
+            logoContainer.innerHTML += logo;
+        });
+
+                    // Gallary scroller script
+        const cardsData = [
+            {
+                image: './image/barber-frame.png',            
+            },
+            {
+                image: './image/barber-work.png',            
+            },
+            {
+                image: './image/blog1.png',
+            },
+            {
+                image: './image/blog2.png',
+            },
+        ];
+
+        const row1 = document.getElementById('row1');
+        const row2 = document.getElementById('row2');
+
+        const createCard = (card) => `
+            <div class="p-4 rounded-lg mx-4 shadow hover:shadow-lg transition-all duration-200 w-60 h-50 shrink-0">
+                    <img class="w-full h-full rounded-md" src="${card.image}" alt="User Image">
+            </div>
+        `;
+
+        const renderCards = (target) => {
+            const doubled = [...cardsData, ...cardsData];
+            doubled.forEach(card => target.insertAdjacentHTML('beforeend', createCard(card)));
+        };
+
+        renderCards(row1);
+        renderCards(row2);
+        
+
+
+        <!-- WhatsApp Script -->
+        function sendBookingToWhatsApp(event) {
+            event.preventDefault();
+
+            const phoneNumber = "2348080705064"; // Replace with your WhatsApp number
+
+            // Get values from form fields
+            const firstName = document.getElementById("first_name").value.trim();
+            const lastName = document.getElementById("last_name").value.trim();
+            const haircut = document.getElementById("haircut_service").value.trim();
+            const buying = document.getElementById("purchase_item").value.trim();
+
+            // Custom WhatsApp message
+            let message = `Hello, my name is ${firstName} ${lastName}, I want ${haircut} hair service, I also want to buy ${buying}. How do I pay?`;
+
+            // Encode for URL
+            const encodedMessage = encodeURIComponent(message);
+
+            // Open WhatsApp
+            const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+            window.open(whatsappURL, "_blank");
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const bookBtn = document.getElementById("bookBtn");
+            if (bookBtn) {
+            bookBtn.addEventListener("click", sendBookingToWhatsApp);
+            }
+        });
+    </script>
+
+   
+</body>
+</html>
