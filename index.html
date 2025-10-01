@@ -50,7 +50,7 @@
         @keyframes fade-out{
            to { opacity: 0;}
         }
-        .header-text-animation, #follow-animation, #store-animation{
+        .header-text-animation, #follow-animation,header-image-animation{
             animation: fade-out linear;
             animation-timeline: view();
             animation-range: exit -200px;
@@ -66,7 +66,7 @@
 
         @keyframes header-image-animation {
             25% { opacity: 1;}
-            80%, 100% { opacity: 0; scale: 2;}
+            75%, 100% { opacity: 0; scale: 1.2;}
         }
         @keyframes appear{   
             to {
@@ -82,13 +82,13 @@
             }
         }
 
-        #booking-animation,  {
+        #booking-animation, header-image-animation {
             animation: exit linear;
             animation-timeline: view();
             animation-range: exit -50px;
         }
 
-        #booking-animation, #follow-animation, #store-animation {
+        #booking-animation, #follow-animation, header-image-animation {
             opacity: 0; scale: 0.5; 
             animation: appear linear forwards;
             animation-timeline: view();
@@ -148,13 +148,13 @@
                                 <path d="m6 6 12 12" />
                             </svg>
                         </button>
-                    </div>
-                    <button
-                        class="hidden md:block bg-gradient-to-r from-indigo-700 to-black/200 hover:bg-gradient-to-br hover:from-purple-700/80 hover:to-black/500 text-white shadow-2xl px-6 py-2.5 rounded-full font-medium transition duration-500">
-                        <a href="./Gallary.html">
-                            Gallary
-                        </a>                        
-                    </button>
+                    </div>                    
+                    <a href="./Gallary.html">
+                        <button  class="hidden md:block bg-gradient-to-r from-indigo-700 to-black/200 hover:bg-gradient-to-br hover:from-purple-700/80 hover:to-black/500 text-white shadow-2xl px-6 py-2.5 rounded-full font-medium transition duration-500">
+                        Gallary
+                        </button>
+                    </a>                        
+                    
 
                     <button id="open-menu"
                         class="md:hidden bg-gray-900 hover:bg-gray-800 text-white p-2 rounded-md aspect-square font-medium transition">
@@ -168,16 +168,16 @@
                 </nav>    
                             <!-- Heading Discription -->
                 <div class="header-text-animation flex flex-col items-center justify-center text-center px-8 md:my-12 my-4 md:pt-15">
-                    <h1 class="text-4xl md:text-6xl  font-medium  mt-5 bg-gradient-to-r from-white to-[#748298] text-transparent bg-clip-text">
-                        Build. Launch. Scale. Without the complexity.
+                    <h1 class="leading-loose text-4xl md:text-6xl font-bold mt-5 bg-gradient-to-r from-white via-white to- text-transparent/5  bg-clip-text">
+                        Welcome to mayor's Saloon...
                     </h1>
-                    <p  class="text-slate-100  mt-4">
-                        A high-performance, serverless Postgres database that helps you ship fast and scale without limits.
+                    <p  class="text-white text-mg  mt-4 leading-loose tracking-widest">
+                        A home of Premiem Shaving Services, with our experienced Barbers
                     </p>
                 </div>                
                         <!-- Button Licks -->
                 <div class="flex justify-center space-x-5 xl:mb-14 md:mb-7 mb-10">                    
-                    <a href="#booking" class="flex space-x-2 bg-linear-to-tr from-slate-900 to-purple-600 hover:bg-linear-to-br hover:from-purple-600 hover:to-slate-900 hover:scale-103 shadow-xl text-purple-50 tracking-wide font-light px-8 py-3 mt-8 rounded-full cursor-pointer transition duration-500">
+                    <a href="#booking" class="flex justify-center items-center space-x-2 bg-linear-to-tr from-slate-900 to-purple-600 hover:bg-linear-to-br hover:from-purple-600 hover:to-slate-900 hover:scale-103 shadow-xl text-purple-50 tracking-wide font-semibold px-8 py-3 mt-8 rounded-full cursor-pointer transition duration-500">
                         <span>Book Now</span>
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M4.166 10h11.667m0 0L9.999 4.167M15.833 10l-5.834 5.834" stroke="#fff" stroke-width="1.8"
@@ -185,7 +185,7 @@
                         </svg>                    
                     </a>
 
-                    <a href="./Hair Styles.html" class="flex space-x-2 border-2 hover:border-none bg-transparent hover:bg-gradient-to-r hover:from-slate-800/80 hover:to-zinc-800/40 text-slate-100 tracking-wider font-bold  px-8 py-3 mt-8 rounded-full hover:scale-103 transition duration-500">
+                    <a href="./Hair Styles.html" class="flex justify-center items-center space-x-2 border-2 hover:border-none bg-transparent hover:bg-gradient-to-r hover:from-slate-800/80 hover:to-zinc-800/40 text-slate-100 tracking-wider font-bold  px-8 py-3 mt-8 rounded-full hover:scale-103 transition duration-500">
                         <span>Our Services</span>
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M4.166 10h11.667m0 0L9.999 4.167M15.833 10l-5.834 5.834" stroke="#fff" stroke-width="1.8"
@@ -211,41 +211,41 @@
         <div class="relative flex flex-col items-center text-white  text-sm ">
             <img src="./image/gallery1.png" alt="hero-bg" class="absolute w-full md:h-200 h-330 pointer-events-none -z-10">
             <div class="bg-black/80 bg-opacity-50 md:h-200 h-330 w-full pb-5">
-                <div class="container mx-auto px-6 md:py-24 py-12 max-md:pb-24 flex flex-col md:grid md:grid-cols-2 gap-x-6 md:items-center max-md:items-start justify-center">                                
-            <div class="z-10 order-2 md:order-1 min-md:-translate-y-20  transition duration-500">       <!-- Images  -->
-                <img src="./image/barber-frame.png" alt="" class="relative lg:w-90 w-64 lg:h-120 h-100 shadow-lg shadow-white rounded-lg">
-                <img src="./image/blog1.png" alt="" class="absolute lg:w-90 w-64 lg:h-120 h-100 rounded-lg shadow-lg shadow-white transform -translate-y-80 translate-x-1/4  transition duration-500" > 
-                <div class=" absolute lg:w-90 w-60 lg:h-120 h-110 border-dashed border-2 border-amber-400 transform -translate-y-90 translate-x-32  transition duration-500"></div>             
-            </div>
-                               <!-- About the shop -->
-            <div class="z-10 md:p-7 px-14 py-6 max-md:mb-24 order-1 md:order-2 flex flex-col min-md:bg-gradient-to-tl from-black via-zinc-800 to-black border-3 max-md:border-r-amber-200 max-md:border-b-amber-200 max-md:border-t-0 max-md:border-l-0 min-md:border-amber-400 min-md:rounded-tl-none min-md:rounded-4xl">
-                <div class="pt-5 pb-12 md:text-4xl text-3xl text-amber-400 max-md:text-slate-200  font-serif flex justify-center items-end ">Ay's Cut <span class="w-25 h-0.5 bg-amber-400 ml-4"></span></div>
-                <div class="grid grid-cols-2 items-center gap-y-17 gap-x-14 text-slate-800">
-                    <div class="flex flex-col justify-end space-y-2 hover:bg-gradient-to-b from-slate-900 to-zinc-900 shadow-xl hover:shadow-amber-950 rounded-2xl px-6 py-3 hover:scale-105 transition duration-600">
-                        <span class="text-2xl text-slate-200 font-serif">Opening Hours</span>
-                        <span class="text-xl text-amber-400 ">8:00 AM</span>
+                <div class="container mx-auto px-3 md:py-24 py-12 max-md:pb-24 flex flex-col md:grid md:grid-cols-2 gap-x-4 md:items-center max-md:items-start justify-center">                                
+                    <div class="z-10 order-2 md:order-1 max-md:translate-x-7  min-md:-translate-y-20  transition duration-500">       <!-- Images  -->
+                        <img src="./image/img1.jpg" alt="" class="relative lg:w-90 w-64 lg:h-120 h-100 shadow-lg shadow-white rounded-lg">
+                        <img src="./image/img7.jpg" alt="" class="absolute lg:w-90 w-64 lg:h-120 h-100 rounded-lg shadow-lg shadow-white transform -translate-y-80 translate-x-1/4  transition duration-500" > 
+                        <div class=" absolute lg:w-90 w-60 lg:h-120 h-110 border-dashed border-2 border-amber-400 transform -translate-y-90 translate-x-32  transition duration-500"></div>             
                     </div>
-                    <div class="flex flex-col justify-end space-y-2 hover:bg-gradient-to-b from-slate-900 to-zinc-900 shadow-2xl hover:shadow-amber-950 rounded-2xl px-6 py-3 hover:scale-105 transition duration-600">
-                        <span class="text-2xl text-slate-200 font-serif">Closing Hours</span>
-                        <span class="text-xl text-amber-400">10:00 PM</span>
-                    </div>
-                    <div class="flex flex-col justify-end space-y-2 hover:bg-gradient-to-b from-slate-900 to-zinc-900 shadow-2xl hover:shadow-amber-950 rounded-2xl px-6 py-3 hover:scale-105 transition duration-600">
-                        <span class="text-2xl text-slate-200 font-serif">Address</span>
-                        <span class="text-xl text-amber-400 text-pretty">Estate Gate, Okada. Besides the Car Park </span>
-                    </div>
-                    <div class="flex flex-col justify-end space-y-2 hover:bg-gradient-to-b from-slate-900 to-zinc-900 shadow-2xl hover:shadow-amber-950 rounded-2xl px-6 py-3 hover:scale-105 transition duration-600">
-                        <span class="text-2xl text-slate-200 font-serif">Contact Us on Whatsapp</span>
-                        <span class="text-xl text-amber-400">07058748480</span>
+                                    <!-- About the shop -->
+                    <div class="z-10 md:p-7 px-16 py-6 max-md:mb-24 order-1 md:order-2 flex flex-col min-md:bg-gradient-to-tl from-black via-zinc-800 to-black border-3 max-md:border-r-amber-200 max-md:border-b-amber-200 max-md:border-t-0 max-md:border-l-0 min-md:border-amber-400 min-md:rounded-tl-none min-md:rounded-4xl">
+                        <div class="pt-5 pb-12 text-4xl font-medium text-amber-400 max-md:text-slate-200  font-serif flex justify-center items-end ">Mayor's Saloon <span class="w-17 md:w-25 h-0.5 bg-amber-400 ml-4"></span></div>
+                        <div class="grid grid-cols-2 items-center gap-y-17 gap-x-14 text-slate-800">
+                            <div class="w-fit flex flex-col items-start justify-start md:justify-end space-y-2 hover:bg-gradient-to-b from-slate-900 to-zinc-900 shadow-xl hover:shadow-amber-950 rounded-2xl px-6 py-3 hover:scale-105 transition duration-600">
+                                <span class="text-xl text-slate-200 font-serif">Opening Hours</span>
+                                <span class="text-lg text-amber-400 ">8:00 AM</span>
+                            </div>
+                            <div class="w-fit flex flex-col items-start justify-start md:justify-end space-y-2 hover:bg-gradient-to-b from-slate-900 to-zinc-900 shadow-2xl hover:shadow-amber-950 rounded-2xl px-6 py-3 hover:scale-105 transition duration-600">
+                                <span class="text-xl text-slate-200 font-serif">Closing Hours</span>
+                                <span class="text-lg text-amber-400">10:00 PM</span>
+                            </div>
+                            <div class="w-fit flex flex-col items-start justify-start md:justify-end space-y-2 hover:bg-gradient-to-b from-slate-900 to-zinc-900 shadow-2xl hover:shadow-amber-950 rounded-2xl px-6 py-3 hover:scale-105 transition duration-600">
+                                <span class="text-xl text-slate-200 font-serif">Address</span>
+                                <span class="text-lg text-amber-400 text-pretty">Estate Gate, Okada. Besides the Car Park </span>
+                            </div>
+                            <div class="w-fit flex flex-col items-start justify-start md:justify-end space-y-2 hover:bg-gradient-to-b from-slate-900 to-zinc-900 shadow-2xl hover:shadow-amber-950 rounded-2xl px-6 py-3 hover:scale-105 transition duration-600">
+                                <span class="text-xl text-slate-200 font-serif">Contact Us on Whatsapp</span>
+                                <span class="text-lg text-amber-400">07058934640</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
             </div>                                 
         </div>
     </section>
 
                     <!-- Our Services Intro -->
-    <section id="service-animation"  class="relative header-image-animation">
+    <section   class="relative header-image-animation">
         <img src="./image/blog.png" alt="" class="w-full h-70">
         <div class="absolute bg-black/80 bg-opacity-40 inset-0 w-full h-70 flex justify-center items-center">
             <span class="w-20 h-0.5 bg-amber-200"></span>
@@ -258,10 +258,10 @@
         <div class="container mx-auto px-4 pt-14">
             <h1 class="text-3xl pb-10 flex justify-center items-end font-extralight tracking-wider text-pretty text-slate-800 font-mono ">Our Latest Creations <span class="w-25 h-0.5 bg-amber-200 ml-4"></span></h1>
             <p class="text-md font-light text-slate-600 text-center mt-2 text-pretty tracking-wider">A visual collection of our most recent works - each piece crafted with intention, emotion, and style.</p>
-            <div class=" grid sm:grid-cols-2 lg:grid-cols-3 items-center justify-center   mt-34 gap-x-5 gap-y-27">
+            <div class=" grid sm:grid-cols-2 lg:grid-cols-3 items-center justify-center   mt-34 gap-x-5 gap-y-30">
                 <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm">
                     <img src="./image/barber-frame.png" alt="" class="absolute blur w-50 h-50 rotate-45 transform -translate-y-15 translate-x-23 "> 
-                    <img  src="./image/gallery4.png" alt="product image" class="relative p-8 rounded-4xl transform -translate-y-18"/>        
+                    <img  src="./image/img1.jpg" alt="product image" class="relative w-90 h-100 p-8 rounded-4xl transform -translate-y-18"/>        
                     <div class="px-5 pb-5 transform -translate-y-8">
                         <h5 class="text-2xl font-semibold tracking-tight text-gray-900 ">Braiding of Hair</h5>                    
                         <div class=" pt-4 flex justify-between">
@@ -271,7 +271,7 @@
                 </div>
                 <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm">
                     <img src="./image/barber-frame.png" alt="" class="absolute blur w-50 h-50 rotate-45 transform -translate-y-15 translate-x-23 "> 
-                <img  src="./image/blog2.png" alt="product image" class="relative p-8 rounded-4xl transform -translate-y-18"/>        
+                <img  src="./image/img2.jpg" alt="product image" class="relative w-90 h-100 p-8 rounded-4xl transform -translate-y-18"/>        
                     <div class="px-5 pb-5 transform -translate-y-8">
                         <h5 class="text-2xl font-semibold tracking-tight text-gray-900 ">Hair Dyeing</h5>                    
                         <div class="pt-4 flex justify-between">
@@ -281,19 +281,17 @@
                 </div>
                 <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm">
                     <img src="./image/barber-frame.png" alt="" class="absolute blur w-50 h-50 rotate-45 transform -translate-y-15 translate-x-23 "> 
-                <img  src="./image/blog3.png" alt="product image" class="relative p-8 rounded-4xl transform -translate-y-18"/>        
+                <img  src="./image/img3.jpg" alt="product image" class="relative w-90 h-100 p-8 rounded-4xl transform -translate-y-18"/>        
                     <div class="px-5 pb-5 transform -translate-y-8">
                         <h5 class="text-2xl font-semibold tracking-tight text-gray-900 ">Low cut, and Sporting waves </h5>                    
                         <div class="pt-4 flex justify-between">
                             <span class="text-3xl font-bold text-amber-400 ">$4</span>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="w-full grid grid-cols-2 md:flex md:flex-col lg:grid lg:grid-cols-8 items-center justify-center   mt-34 gap-x-5 gap-y-27">
-                <div class="w-full lg:col-start-2 lg:col-end-5  max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm">
+                </div>                        
+                <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm">
                     <img src="./image/barber-frame.png" alt="" class="absolute blur w-50 h-50 rotate-45 transform -translate-y-15 translate-x-23 "> 
-                <img  src="./image/gallery2.png" alt="product image" class="relative p-8 rounded-4xl transform -translate-y-18"/>        
+                <img  src="./image/img11.jpg" alt="product image" class="relative w-90 h-100 p-8 rounded-4xl transform -translate-y-18"/>        
                     <div class="px-5 pb-5 transform -translate-y-8">
                         <h5 class="text-2xl font-semibold tracking-tight text-gray-900 ">Roundcut, plus bonus styling</h5>                    
                         <div class="pt-4 flex justify-between">
@@ -301,9 +299,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="w-full max-w-sm lg:col-start-5 lg:col-end-8 bg-white border border-gray-200 rounded-lg shadow-sm">
+                <div class="w-full max-w-sm  bg-white border border-gray-200 rounded-lg shadow-sm">
                     <img src="./image/barber-frame.png" alt="" class="absolute blur w-50 h-50 rotate-45 transform -translate-y-15 translate-x-23 "> 
-                <img  src="./image/blog3.png" alt="product image" class="relative p-8 rounded-4xl transform -translate-y-18"/>        
+                <img  src="./image/img6.jpg" alt="product image" class="relative w-90 h-100 p-8 rounded-4xl transform -translate-y-18"/>        
                     <div class="px-5 pb-5 transform -translate-y-8">
                         <h5 class="text-2xl font-semibold tracking-tight text-gray-900 ">Triming of beards, plus oiling of the beards </h5>                    
                         <div class="pt-4 flex justify-between">
@@ -311,9 +309,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="w-full lg:col-start-4 lg:col-end-7 max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm">
+                <div class="w-full  max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm">
                     <img src="./image/barber-frame.png" alt="" class="absolute blur w-50 h-50 rotate-45 transform -translate-y-15 translate-x-23 "> 
-                     <img  src="./image/blog3.png" alt="product image" class="relative p-8 rounded-4xl transform -translate-y-18"/>        
+                     <img  src="./image/img7.jpg" alt="product image" class="relative w-90 h-100 p-8 rounded-4xl transform -translate-y-18"/>        
                     <div class="px-5 pb-5 transform -translate-y-8">
                         <h5 class="text-2xl font-semibold tracking-tight text-gray-900 ">Washing of Hair</h5>                    
                         <div class="pt-4 flex justify-between">
@@ -391,17 +389,18 @@
     </section>
 
                      	<!-- Inventry what we sell -->
-    <section id="store-animation" class="bg-linear-to-br from-slate-50 to-slate-100">
-        <div class="container mx-auto px-4 pt-14">           
+    <section id="" class="header-image-animation bg-linear-to-br from-slate-50 to-slate-100">
+        <div class="container mx-auto px-4 pt-24">           
             <h1 class="text-3xl pb-4 flex justify-center items-end text-slate-800 font-extralight tracking-wider text-pretty font-mono ">Our Store <span class="w-25 h-0.5 bg-amber-200 ml-4"></span></h1>
             <p class="text-md font-light text-slate-600 text-center pb-12 mt-2 text-pretty tracking-wider">We sell all kinds of Barbing Equipement and styling equipments.</p>            
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 items-center justify-center w-full">
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-9 items-center justify-center w-full
+            space-x-3">
                 <div class="grid md:col-span-2 gap-3 justify-center">
-                    <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+                    <div class="w-full bg-white border border-gray-200 rounded-lg shadow-sm ">
                         <a href="#">
                             <img class="p-8 rounded-t-lg" src="./image/gallery1.png" alt="product image" />
                         </a>
-                        <div class="px-5 pb-5">
+                        <div class="flex flex-col items-center justify-center px-5 pb-5">
                             <a href="#">
                                 <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Barbing Clipers</h5>
                             </a>
@@ -426,21 +425,22 @@
                                 </div>
                                 <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded-sm dark:bg-blue-200 dark:text-blue-800 ms-3">4.7</span>
                             </div>
-                            <div class="flex items-center justify-between">
+                            <div class="flex flex-col items-center justify-center">
                                 <span class="text-3xl font-bold text-gray-900 dark:text-white">$20</span>
-                                <a href="#booking" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Book Now</a>
+                                <a href="#booking" class="text-white bg-gradient-to-r from-blue-500 to-blue-800 hover:bg-gradient-to-br hover:from-sky-500 hover:to-sky-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center transition duration-500">Book Now</a>
                             </div>
                         </div>
                     </div>
-                    <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+                    <div class="w-full bg-white border border-gray-200 rounded-lg shadow-sm ">
                         <a href="#">
-                            <img class="p-8 rounded-t-lg" src="./image/gallery2.png" alt="product image" />
+                            <img class="p-8 rounded-t-lg" src="./image/gallery1.png" alt="product image" />
                         </a>
-                        <div class="px-5 pb-5">
+                        <div class="flex flex-col items-center justify-center px-5 pb-5">
                             <a href="#">
-                                <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Premiem Beards Cream</h5>
+                                <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Barbing Clipers</h5>
                             </a>
                             <div class="flex items-center mt-2.5 mb-5">
+                                        <!-- Rating Stars -->
                                 <div class="flex items-center space-x-1 rtl:space-x-reverse">
                                     <svg class="w-4 h-4 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
                                         <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
@@ -458,23 +458,24 @@
                                         <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
                                     </svg>
                                 </div>
-                                <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded-sm dark:bg-blue-200 dark:text-blue-800 ms-3">5.0</span>
+                                <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded-sm dark:bg-blue-200 dark:text-blue-800 ms-3">4.7</span>
                             </div>
-                            <div class="flex items-center justify-between">
-                                <span class="text-3xl font-bold text-gray-900 dark:text-white">$15.99</span>
-                                <a href="#booking" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Book Now</a>
+                            <div class="flex flex-col items-center justify-center">
+                                <span class="text-3xl font-bold text-gray-900 dark:text-white">$20</span>
+                                <a href="#booking" class="text-white bg-gradient-to-r from-blue-500 to-blue-800 hover:bg-gradient-to-br hover:from-sky-500 hover:to-sky-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center transition duration-500">Book Now</a>
                             </div>
                         </div>
                     </div>
-                    <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+                    <div class="w-full bg-white border border-gray-200 rounded-lg shadow-sm ">
                         <a href="#">
-                            <img class="p-8 rounded-t-lg" src="./image/gallery3.png" alt="product image" />
+                            <img class="p-8 rounded-t-lg" src="./image/gallery1.png" alt="product image" />
                         </a>
-                        <div class="px-5 pb-5">
+                        <div class="flex flex-col items-center justify-center px-5 pb-5">
                             <a href="#">
-                                <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">clipper Steps and Tools box</h5>
+                                <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Barbing Clipers</h5>
                             </a>
                             <div class="flex items-center mt-2.5 mb-5">
+                                        <!-- Rating Stars -->
                                 <div class="flex items-center space-x-1 rtl:space-x-reverse">
                                     <svg class="w-4 h-4 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
                                         <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
@@ -492,26 +493,27 @@
                                         <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
                                     </svg>
                                 </div>
-                                <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded-sm dark:bg-blue-200 dark:text-blue-800 ms-3">5.0</span>
+                                <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded-sm dark:bg-blue-200 dark:text-blue-800 ms-3">4.7</span>
                             </div>
-                            <div class="flex items-center justify-between">
-                                <span class="text-3xl font-bold text-gray-900 dark:text-white">$17</span>
-                                <a href="#booking" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Book Now</a>
+                            <div class="flex flex-col items-center justify-center">
+                                <span class="text-3xl font-bold text-gray-900 dark:text-white">$20</span>
+                                <a href="#booking" class="text-white bg-gradient-to-r from-blue-500 to-blue-800 hover:bg-gradient-to-br hover:from-sky-500 hover:to-sky-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center transition duration-500">Book Now</a>
                             </div>
                         </div>
                     </div>
                 </div> 
 
                 <div class="grid md:grid-cols-1 md:col-span-1 gap-4">
-                    <div class="w-full h-fit max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+                    <div class="w-full bg-white border border-gray-200 rounded-lg shadow-sm ">
                         <a href="#">
-                            <img class="p-8 rounded-t-lg" src="./image/gallery4.png" alt="product image" />
+                            <img class="p-8 rounded-t-lg" src="./image/gallery1.png" alt="product image" />
                         </a>
-                        <div class="px-5 pb-5">
+                        <div class="flex flex-col items-center justify-center px-5 pb-5">
                             <a href="#">
-                                <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Clipper Sterilizer</h5>
+                                <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Barbing Clipers</h5>
                             </a>
                             <div class="flex items-center mt-2.5 mb-5">
+                                        <!-- Rating Stars -->
                                 <div class="flex items-center space-x-1 rtl:space-x-reverse">
                                     <svg class="w-4 h-4 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
                                         <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
@@ -529,23 +531,24 @@
                                         <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
                                     </svg>
                                 </div>
-                                <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded-sm dark:bg-blue-200 dark:text-blue-800 ms-3">5.0</span>
+                                <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded-sm dark:bg-blue-200 dark:text-blue-800 ms-3">4.7</span>
                             </div>
-                            <div class="flex items-center justify-between">
-                                <span class="text-3xl font-bold text-gray-900 dark:text-white">$60</span>
-                                <a href="#booking" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Book Now</a>
+                            <div class="flex flex-col items-center justify-center">
+                                <span class="text-3xl font-bold text-gray-900 dark:text-white">$20</span>
+                                <a href="#booking" class="text-white bg-gradient-to-r from-blue-500 to-blue-800 hover:bg-gradient-to-br hover:from-sky-500 hover:to-sky-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center transition duration-500">Book Now</a>
                             </div>
                         </div>
                     </div>
-                    <div class="w-full h-fit max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+                    <div class="w-full bg-white border border-gray-200 rounded-lg shadow-sm ">
                         <a href="#">
-                            <img class="p-8 rounded-t-lg" src="./image/gallery5.png" alt="product image" />
+                            <img class="p-8 rounded-t-lg" src="./image/gallery1.png" alt="product image" />
                         </a>
-                        <div class="px-5 pb-5">
+                        <div class="flex flex-col items-center justify-center px-5 pb-5">
                             <a href="#">
-                                <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Premiem Hair comb</h5>
+                                <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Barbing Clipers</h5>
                             </a>
                             <div class="flex items-center mt-2.5 mb-5">
+                                        <!-- Rating Stars -->
                                 <div class="flex items-center space-x-1 rtl:space-x-reverse">
                                     <svg class="w-4 h-4 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
                                         <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
@@ -563,23 +566,24 @@
                                         <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
                                     </svg>
                                 </div>
-                                <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded-sm dark:bg-blue-200 dark:text-blue-800 ms-3">5.0</span>
+                                <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded-sm dark:bg-blue-200 dark:text-blue-800 ms-3">4.7</span>
                             </div>
-                            <div class="flex items-center justify-between">
-                                <span class="text-3xl font-bold text-gray-900 dark:text-white">$2</span>
-                                <a href="#booking" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Book Now</a>
+                            <div class="flex flex-col items-center justify-center">
+                                <span class="text-3xl font-bold text-gray-900 dark:text-white">$20</span>
+                                <a href="#booking" class="text-white bg-gradient-to-r from-blue-500 to-blue-800 hover:bg-gradient-to-br hover:from-sky-500 hover:to-sky-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center transition duration-500">Book Now</a>
                             </div>
                         </div>
                     </div>
-                    <div class="w-full h-fit max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+                    <div class="w-full bg-white border border-gray-200 rounded-lg shadow-sm ">
                         <a href="#">
-                            <img class="p-8 rounded-t-lg" src="./image/home-blog1.png" alt="product image" />
+                            <img class="p-8 rounded-t-lg" src="./image/gallery1.png" alt="product image" />
                         </a>
-                        <div class="px-5 pb-5">
+                        <div class="flex flex-col items-center justify-center px-5 pb-5">
                             <a href="#">
-                                <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Hiar Relaxer </h5>
+                                <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Barbing Clipers</h5>
                             </a>
                             <div class="flex items-center mt-2.5 mb-5">
+                                        <!-- Rating Stars -->
                                 <div class="flex items-center space-x-1 rtl:space-x-reverse">
                                     <svg class="w-4 h-4 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
                                         <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
@@ -597,23 +601,24 @@
                                         <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
                                     </svg>
                                 </div>
-                                <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded-sm dark:bg-blue-200 dark:text-blue-800 ms-3">4.0</span>
+                                <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded-sm dark:bg-blue-200 dark:text-blue-800 ms-3">4.7</span>
                             </div>
-                            <div class="flex items-center justify-between">
-                                <span class="text-3xl font-bold text-gray-900 dark:text-white">$2.99</span>
-                                <a href="#" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Book Now</a>
+                            <div class="flex flex-col items-center justify-center">
+                                <span class="text-3xl font-bold text-gray-900 dark:text-white">$20</span>
+                                <a href="#booking" class="text-white bg-gradient-to-r from-blue-500 to-blue-800 hover:bg-gradient-to-br hover:from-sky-500 hover:to-sky-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center transition duration-500">Book Now</a>
                             </div>
                         </div>
                     </div>
-                    <div class="w-full h-fit max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+                    <div class="w-full bg-white border border-gray-200 rounded-lg shadow-sm ">
                         <a href="#">
-                            <img class="p-8 rounded-t-lg" src="./image/home-blog2.png" alt="product image" />
+                            <img class="p-8 rounded-t-lg" src="./image/gallery1.png" alt="product image" />
                         </a>
-                        <div class="px-5 pb-5">
+                        <div class="flex flex-col items-center justify-center px-5 pb-5">
                             <a href="#">
-                                <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Hair Twister</h5>
+                                <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Barbing Clipers</h5>
                             </a>
                             <div class="flex items-center mt-2.5 mb-5">
+                                        <!-- Rating Stars -->
                                 <div class="flex items-center space-x-1 rtl:space-x-reverse">
                                     <svg class="w-4 h-4 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
                                         <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
@@ -631,11 +636,11 @@
                                         <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
                                     </svg>
                                 </div>
-                                <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded-sm dark:bg-blue-200 dark:text-blue-800 ms-3">5.0</span>
+                                <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded-sm dark:bg-blue-200 dark:text-blue-800 ms-3">4.7</span>
                             </div>
-                            <div class="flex items-center justify-between">
-                                <span class="text-3xl font-bold text-gray-900 dark:text-white">$12.99</span>
-                                <a href="#booking" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Book Now</a>
+                            <div class="flex flex-col items-center justify-center">
+                                <span class="text-3xl font-bold text-gray-900 dark:text-white">$20</span>
+                                <a href="#booking" class="text-white bg-gradient-to-r from-blue-500 to-blue-800 hover:bg-gradient-to-br hover:from-sky-500 hover:to-sky-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center transition duration-500">Book Now</a>
                             </div>
                         </div>
                     </div>
@@ -645,7 +650,7 @@
     </section> 
 
 		            	<!-- Form (Booking Section)  -->
-    <section id="booking "  class="bg-slate-100">
+    <section id="booking"  class="bg-slate-100">
   <div id="booking-animation"  class="container mx-auto px-6 pt-24 pb-8 flex flex-col items-center">
       <div class="mb-8 text-3xl text-slate-800 font-bolder flex -space-x-4 items-end">
         Make yr Reservations <span class="w-25 h-0.5 bg-amber-200 ml-4"></span>
@@ -713,7 +718,7 @@
 
         <!-- Book Now button -->
         <button id="bookBtn" type="submit" 
-          class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+          class="text-white bg-gradient-to-r from-blue-500 to-blue-800 hover:bg-gradient-to-br hover:from-sky-500 hover:to-sky-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center transition duration-500">
           Book Now
         </button>
       </form>
@@ -721,7 +726,7 @@
     </section>        
  
                         <!-- To Do Later -->
-    <div id=""  class="w-full bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+    <div id=""  class="w-full bg-white border border-gray-200 rounded-lg shadow-sm">
         <div class="sm:hidden">
             <label for="tabs" class="sr-only">Select tab</label>
             <select id="tabs" class="bg-gray-50 border-0 border-b border-gray-200 text-gray-900 text-sm rounded-t-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
@@ -854,7 +859,7 @@
         </div>
     </div>
                          <!-- Gallary Scroller -->
-    <section id="gallary">
+    <section id="gallary" class="bg-slate-100">
     <div class="marquee-row w-full mx-auto max-w-5xl overflow-hidden relative">
         <div class="absolute left-0 top-0 h-full w-20 z-10 pointer-events-none bg-gradient-to-r from-white to-transparent"></div>
         <div class="marquee-inner flex transform-gpu min-w-[200%] pt-10 pb-5" id="row1"></div>
@@ -897,32 +902,34 @@
     </section>
 
 			        <!-- FOOTER -->
-<footer class="bg-linear-to-tr from-slate-800 via-slate-900 to-zinc-700 rounded-lg shadow-sm m-4 dark:bg-gray-800">
-    <div class="container mx-auto pt-9 px-6 pb-12 flex max-md:flex-col justify-center items-center md:flex md:items-center md:justify-between">
-       <div class="flex flex-col max-md:items-center space-y-2">
-        <span class="text-2xl text-slate-200 hover:text-slate-400 text tracking-wider text-pretty hover:underline font-extralight transition duration-500"> Contact Us For Yr bookings and Reservations </span>       
-        <h2 class="w-fit text-md px-4 py-2 text-slate-200 hover:text-amber-200 hover:rounded-2xl shadow-xl hover:shadow-blue-900 hover:scale-103 transition duration-500">WHATSAPP: 07058748480</h2>
-        <h2 class="w-fit text-md px-4 py-2 text-slate-200 hover:text-amber-200 hover:rounded-2xl shadow-xl hover:shadow-blue-900 hover:scale-103 transition duration-500">EMAIL: ngubipaul@gmail.com</h2>
-       </div> 
-       <ul class="flex flex-wrap space-x-5 space-y-8 items-center md:mt-3 mt-6 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
-            <li>
-                <a href="#about"  class="text-md px-4 py-2 text-slate-200 hover:text-amber-200 hover:rounded-2xl shadow-xl hover:shadow-blue-900 hover:scale-103 transition duration-500">About</a>
-            </li>
-            
-            <li>
-                <a href="#services"  class="text-md px-4 py-2 text-slate-200 hover:text-amber-200 hover:rounded-2xl shadow-xl hover:shadow-blue-900 hover:scale-103 transition duration-500">Pricing Plan</a>
-            </li>
-            <li>
-                <a href="#booking"  class="text-md px-4 py-2 text-slate-200 hover:text-amber-200 hover:rounded-2xl shadow-xl hover:shadow-blue-900 hover:scale-103 transition duration-500">Book Now</a>
-            </li>
-       </ul>
-                 <!-- back to top button -->
-       <a href="#" class="text-md px-4 py-2 text-slate-200 hover:text-amber-200 hover:rounded-2xl shadow-xl hover:shadow-blue-900 hover:scale-103 transition duration-500">Back to Top</a>
-    </div>
-</footer>
+    <footer class="bg-linear-to-tr from-slate-800 via-slate-900 to-zinc-700 rounded-lg shadow-sm m-4 dark:bg-gray-800">
+        <div class="container mx-auto pt-9 px-6 pb-12 flex max-md:flex-col justify-center items-center md:flex md:items-center md:justify-between">
+        <div class="flex flex-col max-md:items-center space-y-2">
+            <img src="./image/logo.png" alt="Our Shop logo" class="size-20">
+            <span class="text-center tracking-wide text-2xl text-slate-200 hover:text-slate-400 text tracking-wider text-pretty hover:underline font-extralight transition duration-500"> Contact Us For Yr Home Services </span>       
+            <h2 class="w-fit text-md px-4 py-2 text-slate-200 hover:text-amber-200 hover:rounded-2xl shadow-xl hover:shadow-blue-900 hover:scale-103 transition duration-500">WHATSAPP: 07058934640</h2>
+            <h2 class="w-fit text-md px-4 py-2 text-slate-200 hover:text-amber-200 hover:rounded-2xl shadow-xl hover:shadow-blue-900 hover:scale-103 transition duration-500">EMAIL: mayorsaloon@gmail.com</h2>
+        </div> 
+        <ul class="flex flex-wrap space-x-5 space-y-8 items-center md:mt-3 mt-6 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
+                <li>
+                    <a href="#about"  class="text-md px-4 py-2 text-slate-200 hover:text-amber-200 hover:rounded-2xl shadow-xl hover:shadow-blue-900 hover:scale-103 transition duration-500">About</a>
+                </li>
+                
+                <li>
+                    <a href="#services"  class="text-md px-4 py-2 text-slate-200 hover:text-amber-200 hover:rounded-2xl shadow-xl hover:shadow-blue-900 hover:scale-103 transition duration-500">Pricing Plan</a>
+                </li>
+                <li>
+                    <a href="#booking"  class="text-md px-4 py-2 text-slate-200 hover:text-amber-200 hover:rounded-2xl shadow-xl hover:shadow-blue-900 hover:scale-103 transition duration-500">Book Now</a>
+                </li>
+        </ul>
+                    <!-- back to top button -->
+        <a href="#" class="text-md px-4 py-2 text-slate-200 hover:text-amber-200 hover:rounded-2xl shadow-xl hover:shadow-blue-900 hover:scale-103 transition duration-500">Back to Top</a>
+        </div>
+    </footer>
 
 <!-- Script 1 -->
     <script>
+                            <!-- Hamburger Menu -->
         const menu = document.getElementById('menu');
         const closeMenu = document.getElementById('close-menu');
         const openMenu = document.getElementById('open-menu');
@@ -937,8 +944,7 @@
             menu.classList.add('max-md:w-full');
         });
 
-        
-
+                         //Header Gallary scroller
         const logos = [
             `<img src="./image/pricing1.png" alt="hero-bg" class="w-40 max-h-40 mx-14 rounded-lg transform translate-y-5 " >`,
             `<img src="./image/pricing2.png" alt="hero-bg" class="w-40 max-h-40 mx-14 rounded-lg">`,
@@ -952,19 +958,19 @@
             logoContainer.innerHTML += logo;
         });
 
-                    // Gallary scroller script
+                             //Bottom Gallary scroller script
         const cardsData = [
             {
-                image: './image/barber-frame.png',            
+                image: './image/img2.jpg',    
             },
             {
-                image: './image/barber-work.png',            
+                image: './image/pricing2.png',    
             },
             {
-                image: './image/blog1.png',
+                image: './image/img7.jpg',
             },
             {
-                image: './image/blog2.png',
+                image: './image/gallery1.png',
             },
         ];
 

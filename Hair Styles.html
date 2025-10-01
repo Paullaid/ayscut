@@ -50,7 +50,7 @@
         @keyframes fade-out{
            to { opacity: 0;}
         }
-        .header-text-animation, #follow-animation, #styles-animation{
+        .header-text-animation, #follow-animation,header-image-animation{
             animation: fade-out linear;
             animation-timeline: view();
             animation-range: exit -200px;
@@ -66,7 +66,7 @@
 
         @keyframes header-image-animation {
             25% { opacity: 1;}
-            80%, 100% { opacity: 0; scale: 2;}
+            75%, 100% { opacity: 0; scale: 1.2;}
         }
         @keyframes appear{   
             to {
@@ -82,13 +82,13 @@
             }
         }
 
-        #booking-animation,  {
+        #booking-animation, header-image-animation {
             animation: exit linear;
             animation-timeline: view();
             animation-range: exit -50px;
         }
 
-        #booking-animation, #follow-animation, #styles-animation {
+        #booking-animation, #follow-animation, header-image-animation {
             opacity: 0; scale: 0.5; 
             animation: appear linear forwards;
             animation-timeline: view();
@@ -168,139 +168,126 @@
                 </nav>    
                             <!-- Heading Discription -->
                 <div class="header-text-animation flex flex-col items-center justify-center text-center px-8 md:my-12 my-30 md:pt-25">
-                    <h1 class="text-4xl md:text-6xl  font-extrabold text-pretty tracking-wider  mt-5 bg-gradient-to-r from-white to-[#748298] text-transparent bg-clip-text">
+                    <h1 class="text-5xl md:text-6xl  font-extrabold text-pretty tracking-wider  mt-5 bg-gradient-to-r from-white via-[#b5b8c9] text-transparent/40 bg-clip-text">
                         Hair Styles
                     </h1>
+                    <p  class="text-slate-100 text-lg  mt-4 ">
+                        Home / Hair Styles
+                    </p>
                 </div> 
         </div>
     </section>            
                   
                         <!-- Services we render -->
-    <section id="services "  class="bg-linear-to-br from-slate-50 to-slate-100">
-        <div id="styles-animation"  class="container mx-auto px-4 pt-14">
-            <h1 class="text-3xl pb-10 flex justify-center items-end font-extralight tracking-wider text-pretty text-slate-800 font-mono ">Our Latest Creations <span class="w-25 h-0.5 bg-amber-200 ml-4"></span></h1>
-            <p class="text-md font-light text-slate-600 text-center mt-2 text-pretty tracking-wider">A visual collection of our most recent works - each piece crafted with intention, emotion, and style.</p>
-            <div class=" grid sm:grid-cols-2 lg:grid-cols-3 items-center justify-center   mt-34 gap-x-5 gap-y-27">
-                <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm">
-                    <img src="./image/barber-frame.png" alt="" class="absolute blur w-50 h-50 rotate-45 transform -translate-y-15 translate-x-23 "> 
-                    <img  src="./image/gallery4.png" alt="product image" class="relative p-8 rounded-4xl transform -translate-y-18"/>        
-                    <div class="px-5 pb-5 transform -translate-y-8">
-                        <h5 class="text-2xl font-semibold tracking-tight text-gray-900 ">Braiding of Hair</h5>                    
-                        <div class=" pt-4 flex justify-between">
-                            <span class="text-3xl font-bold text-amber-400 ">$15</span>
+        <section id="services"  class="bg-linear-to-br from-slate-50 to-slate-100">
+            <div class="container mx-auto px-4 pt-14">
+                <h1 class="text-3xl pb-10 flex justify-center items-end font-extralight tracking-wider text-pretty text-slate-800 font-mono ">Our Latest Creations <span class="w-25 h-0.5 bg-amber-200 ml-4"></span></h1>
+                <p class="text-md font-light text-slate-600 text-center mt-2 text-pretty tracking-wider">A visual collection of our most recent works - each piece crafted with intention, emotion, and style.</p>
+                <div class=" grid sm:grid-cols-2 lg:grid-cols-3 items-center justify-center   mt-34 gap-x-5 gap-y-30">
+                    <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm">
+                        <img src="./image/barber-frame.png" alt="" class="absolute blur w-50 h-50 rotate-45 transform -translate-y-15 translate-x-23 "> 
+                        <img  src="./image/img1.jpg" alt="product image" class="relative w-90 h-100 p-8 rounded-4xl transform -translate-y-18"/>        
+                        <div class="px-5 pb-5 transform -translate-y-8">
+                            <h5 class="text-2xl font-semibold tracking-tight text-gray-900 ">Braiding of Hair</h5>                    
+                            <div class=" pt-4 flex justify-between">
+                                <span class="text-3xl font-bold text-amber-400 ">$15</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm">
-                    <img src="./image/barber-frame.png" alt="" class="absolute blur w-50 h-50 rotate-45 transform -translate-y-15 translate-x-23 "> 
-                <img  src="./image/blog2.png" alt="product image" class="relative p-8 rounded-4xl transform -translate-y-18"/>        
-                    <div class="px-5 pb-5 transform -translate-y-8">
-                        <h5 class="text-2xl font-semibold tracking-tight text-gray-900 ">Hair Dyeing</h5>                    
-                        <div class="pt-4 flex justify-between">
-                            <span class="text-3xl font-bold text-amber-400 ">$4</span>
+                    <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm">
+                        <img src="./image/barber-frame.png" alt="" class="absolute blur w-50 h-50 rotate-45 transform -translate-y-15 translate-x-23 "> 
+                    <img  src="./image/img2.jpg" alt="product image" class="relative w-90 h-100 p-8 rounded-4xl transform -translate-y-18"/>        
+                        <div class="px-5 pb-5 transform -translate-y-8">
+                            <h5 class="text-2xl font-semibold tracking-tight text-gray-900 ">Hair Dyeing</h5>                    
+                            <div class="pt-4 flex justify-between">
+                                <span class="text-3xl font-bold text-amber-400 ">$4</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm">
-                    <img src="./image/barber-frame.png" alt="" class="absolute blur w-50 h-50 rotate-45 transform -translate-y-15 translate-x-23 "> 
-                <img  src="./image/blog3.png" alt="product image" class="relative p-8 rounded-4xl transform -translate-y-18"/>        
-                    <div class="px-5 pb-5 transform -translate-y-8">
-                        <h5 class="text-2xl font-semibold tracking-tight text-gray-900 ">Low cut, and Sporting waves </h5>                    
-                        <div class="pt-4 flex justify-between">
-                            <span class="text-3xl font-bold text-amber-400 ">$4</span>
+                    <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm">
+                        <img src="./image/barber-frame.png" alt="" class="absolute blur w-50 h-50 rotate-45 transform -translate-y-15 translate-x-23 "> 
+                        <img  src="./image/img3.jpg" alt="product image" class="relative w-90 h-100 p-8 rounded-4xl transform -translate-y-18"/>        
+                        <div class="px-5 pb-5 transform -translate-y-8">
+                            <h5 class="text-2xl font-semibold tracking-tight text-gray-900 ">Low cut, and Sporting waves </h5>                    
+                            <div class="pt-4 flex justify-between">
+                                <span class="text-3xl font-bold text-amber-400 ">$4</span>
+                            </div>
+                        </div>
+                    </div>                        
+                    <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm">
+                        <img src="./image/barber-frame.png" alt="" class="absolute blur w-50 h-50 rotate-45 transform -translate-y-15 translate-x-23 "> 
+                        <img src="./image/img11.jpg" alt="product image" class="relative w-90 h-100 p-8 rounded-4xl transform -translate-y-18"/>        
+                        <div class="px-5 pb-5 transform -translate-y-8">
+                            <h5 class="text-2xl font-semibold tracking-tight text-gray-900 ">Roundcut, plus bonus styling</h5>                    
+                            <div class="pt-4 flex justify-between">
+                                <span class="text-3xl font-bold text-amber-400 ">$7</span>
+                            </div>
                         </div>
                     </div>
-                </div>
+                    <div class="w-full max-w-sm  bg-white border border-gray-200 rounded-lg shadow-sm">
+                        <img src="./image/barber-frame.png" alt="" class="absolute blur w-50 h-50 rotate-45 transform -translate-y-15 translate-x-23 "> 
+                    <img  src="./image/img6.jpg" alt="product image" class="relative w-90 h-100 p-8 rounded-4xl transform -translate-y-18"/>        
+                        <div class="px-5 pb-5 transform -translate-y-8">
+                            <h5 class="text-2xl font-semibold tracking-tight text-gray-900 ">Triming of beards, plus oiling of the beards </h5>                    
+                            <div class="pt-4 flex justify-between">
+                                <span class="text-3xl font-bold text-amber-400 ">$11.99</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full  max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm">
+                        <img src="./image/barber-frame.png" alt="" class="absolute blur w-50 h-50 rotate-45 transform -translate-y-15 translate-x-23 "> 
+                        <img  src="./image/img7.jpg" alt="product image" class="relative w-90 h-100 p-8 rounded-4xl transform -translate-y-18"/>        
+                        <div class="px-5 pb-5 transform -translate-y-8">
+                            <h5 class="text-2xl font-semibold tracking-tight text-gray-900 ">Washing of Hair</h5>                    
+                            <div class="pt-4 flex justify-between">
+                                <span class="text-3xl font-bold text-amber-400 ">$2.99</span>
+                            </div>
+                        </div>
+                    </div>                                 
+                </div>           
             </div>
-            <div class="w-full grid grid-cols-2 md:flex md:flex-col lg:grid lg:grid-cols-8 items-center justify-center   mt-34 gap-x-5 gap-y-27">
-                <div class="w-full lg:col-start-2 lg:col-end-5  max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm">
-                    <img src="./image/barber-frame.png" alt="" class="absolute blur w-50 h-50 rotate-45 transform -translate-y-15 translate-x-23 "> 
-                <img  src="./image/gallery2.png" alt="product image" class="relative p-8 rounded-4xl transform -translate-y-18"/>        
-                    <div class="px-5 pb-5 transform -translate-y-8">
-                        <h5 class="text-2xl font-semibold tracking-tight text-gray-900 ">Roundcut, plus bonus styling</h5>                    
-                        <div class="pt-4 flex justify-between">
-                            <span class="text-3xl font-bold text-amber-400 ">$7</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-full max-w-sm lg:col-start-5 lg:col-end-8 bg-white border border-gray-200 rounded-lg shadow-sm">
-                    <img src="./image/barber-frame.png" alt="" class="absolute blur w-50 h-50 rotate-45 transform -translate-y-15 translate-x-23 "> 
-                <img  src="./image/blog3.png" alt="product image" class="relative p-8 rounded-4xl transform -translate-y-18"/>        
-                    <div class="px-5 pb-5 transform -translate-y-8">
-                        <h5 class="text-2xl font-semibold tracking-tight text-gray-900 ">Triming of beards, plus oiling of the beards </h5>                    
-                        <div class="pt-4 flex justify-between">
-                            <span class="text-3xl font-bold text-amber-400 ">$11.99</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-full lg:col-start-4 lg:col-end-7 max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm">
-                    <img src="./image/barber-frame.png" alt="" class="absolute blur w-50 h-50 rotate-45 transform -translate-y-15 translate-x-23 "> 
-                     <img  src="./image/blog3.png" alt="product image" class="relative p-8 rounded-4xl transform -translate-y-18"/>        
-                    <div class="px-5 pb-5 transform -translate-y-8">
-                        <h5 class="text-2xl font-semibold tracking-tight text-gray-900 ">Washing of Hair</h5>                    
-                        <div class="pt-4 flex justify-between">
-                            <span class="text-3xl font-bold text-amber-400 ">$2.99</span>
-                        </div>
-                    </div>
-                </div>               
-            </div> 
-                        <!-- Check more button -->
-            <div class="pt-12 w-full h-full flex items-center justify-center">
-                   <button class="w-40 relative flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-md font-bold text-gray-900 rounded-lg group bg-gradient-to-br from-red-200 via-red-300 to-yellow-200 group-hover:from-red-200 group-hover:via-red-300 group-hover:to-yellow-200 hover:text-slate-800 dark:text-white dark:hover:text-gray-900 focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-red-400">
-                    <a href="./Hair Styles.html">
-                        <span class="flex items-center gap-x-3 relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
-                            <span>See More</span>                        
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M4.166 10h11.667m0 0L9.999 4.167M15.833 10l-5.834 5.834" stroke="#fff" stroke-width="1.8"
-                                    stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </span>                        
-                    </a>                    
-                </button>  
-            </div>            
-        </div>
-                        <!-- List of services -->
-        <div class="font-mono pt-14 pb-12 border-4 border-t-0 border-l-0 border-slate-400 rounded-md">
-            <h1 class=" text-2xl pb-10 flex justify-center items-end text-slate-800 font-light tracking-wider text-pretty ">OUR SERVICES<span class="w-25 h-0.5 bg-amber-200 ml-4"></span></h1>
-            <ul class="px-8 grid grid-cols-2 gap-5 items-start ">
-                <li class="flex space-x-6 justify-center items-center">
-                  <h2 class="text-lg font-light italic font-mono text-slate-800">DREAD LOCK</h2>
-                  <div class="w-50  border-dashed rounded-full border border-slate-700 "></div>
-                  <span class="text-lg text-amber-400">$20</span>  
-                </li>
-                <li class="flex space-x-6 justify-center items-center">
-                  <h2 class="text-lg font-light italic font-mono text-slate-800">CORN ROW </h2>
-                  <div class="w-50  border-dashed rounded-full border border-slate-700 "></div>
-                  <span class="text-lg text-amber-400">$12</span>  
-                </li>
-                <li class="flex space-x-6 justify-center items-center">
-                  <h2 class="text-lg font-light italic font-mono text-slate-800">SKIN CUT</h2>
-                  <div class="w-50  border-dashed rounded-full border border-slate-700 "></div>
-                  <span class="text-lg text-amber-400">$8</span>  
-                </li>
-                <li class="flex space-x-6 justify-center items-center">
-                  <h2 class="text-lg font-light italic font-mono text-slate-800">PIECINGS</h2>
-                  <div class="w-50  border-dashed rounded-full border border-slate-700 "></div>
-                  <span class="text-lg text-amber-400">$21</span>  
-                </li>
-                <li class="flex space-x-6 justify-center items-center">
-                  <h2 class="text-lg font-light italic font-mono text-slate-800">BEARD TRIMING</h2>
-                  <div class="w-50  border-dashed rounded-full border border-slate-700 "></div>
-                  <span class="text-lg text-amber-400">$20</span>  
-                </li>
-                <li class="flex space-x-6 justify-center items-center">
-                  <h2 class="text-lg font-light italic font-mono text-slate-800">HAIR DYDING</h2>
-                  <div class="w-50  border-dashed rounded-full border border-slate-700 "></div>
-                  <span class="text-lg text-amber-400">$25</span>  
-                </li>
-                <li class="flex space-x-6 justify-center items-center">
-                  <h2 class="text-lg font-light italic font-mono text-slate-800">TATOO</h2>
-                  <div class="w-50  border-dashed rounded-full border border-slate-700 "></div>
-                  <span class="text-lg text-amber-400">$32</span>  
-                </li>
-            </ul>                                    
-        </div>
-    </section>    
+                            <!-- List of services -->
+            <div class="font-mono pt-14 pb-12 border-4 border-t-0 border-l-0 border-slate-400 rounded-md">
+                <h1 class=" text-2xl pb-10 flex justify-center items-end text-slate-800 font-light tracking-wider text-pretty ">OUR SERVICES<span class="w-25 h-0.5 bg-amber-200 ml-4"></span></h1>
+                <ul class="px-8 grid grid-cols-2 gap-5 items-start ">
+                    <li class="flex space-x-6 justify-center items-center">
+                    <h2 class="text-lg font-light italic font-mono text-slate-800">DREAD LOCK</h2>
+                    <div class="w-50  border-dashed rounded-full border border-slate-700 "></div>
+                    <span class="text-lg text-amber-400">$20</span>  
+                    </li>
+                    <li class="flex space-x-6 justify-center items-center">
+                    <h2 class="text-lg font-light italic font-mono text-slate-800">CORN ROW </h2>
+                    <div class="w-50  border-dashed rounded-full border border-slate-700 "></div>
+                    <span class="text-lg text-amber-400">$12</span>  
+                    </li>
+                    <li class="flex space-x-6 justify-center items-center">
+                    <h2 class="text-lg font-light italic font-mono text-slate-800">SKIN CUT</h2>
+                    <div class="w-50  border-dashed rounded-full border border-slate-700 "></div>
+                    <span class="text-lg text-amber-400">$8</span>  
+                    </li>
+                    <li class="flex space-x-6 justify-center items-center">
+                    <h2 class="text-lg font-light italic font-mono text-slate-800">PIECINGS</h2>
+                    <div class="w-50  border-dashed rounded-full border border-slate-700 "></div>
+                    <span class="text-lg text-amber-400">$21</span>  
+                    </li>
+                    <li class="flex space-x-6 justify-center items-center">
+                    <h2 class="text-lg font-light italic font-mono text-slate-800">BEARD TRIMING</h2>
+                    <div class="w-50  border-dashed rounded-full border border-slate-700 "></div>
+                    <span class="text-lg text-amber-400">$20</span>  
+                    </li>
+                    <li class="flex space-x-6 justify-center items-center">
+                    <h2 class="text-lg font-light italic font-mono text-slate-800">HAIR DYDING</h2>
+                    <div class="w-50  border-dashed rounded-full border border-slate-700 "></div>
+                    <span class="text-lg text-amber-400">$25</span>  
+                    </li>
+                    <li class="flex space-x-6 justify-center items-center">
+                    <h2 class="text-lg font-light italic font-mono text-slate-800">TATOO</h2>
+                    <div class="w-50  border-dashed rounded-full border border-slate-700 "></div>
+                    <span class="text-lg text-amber-400">$32</span>  
+                    </li>
+                </ul>                                    
+            </div>
+        </section>    
  
 
 		            	<!-- Form (Booking Section)  -->
@@ -372,7 +359,7 @@
 
                 <!-- Book Now button -->
                 <button id="bookBtn" type="submit" 
-                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                class="text-white bg-gradient-to-r from-blue-500 to-blue-800 hover:bg-gradient-to-br hover:from-sky-500 hover:to-sky-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center transition duration-500">
                 Book Now
                 </button>
             </form>
@@ -410,29 +397,30 @@
     </section>
 
 			        <!-- FOOTER -->
-<footer class="bg-linear-to-tr from-slate-800 via-slate-900 to-zinc-700 rounded-lg shadow-sm m-4 dark:bg-gray-800">
-    <div class="container mx-auto pt-9 px-6 pb-12 flex max-md:flex-col justify-center items-center md:flex md:items-center md:justify-between">
-       <div class="flex flex-col max-md:items-center space-y-2">
-        <span class="text-2xl text-slate-200 hover:text-slate-400 text tracking-wider text-pretty hover:underline font-extralight transition duration-500"> Contact Us For Yr bookings and Reservations </span>       
-        <h2 class="w-fit text-md px-4 py-2 text-slate-200 hover:text-amber-200 hover:rounded-2xl shadow-xl hover:shadow-blue-900 hover:scale-103 transition duration-500">WHATSAPP: 07058748480</h2>
-        <h2 class="w-fit text-md px-4 py-2 text-slate-200 hover:text-amber-200 hover:rounded-2xl shadow-xl hover:shadow-blue-900 hover:scale-103 transition duration-500">EMAIL: ngubipaul@gmail.com</h2>
-       </div> 
-       <ul class="flex flex-wrap space-x-5 space-y-8 items-center md:mt-3 mt-6 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
-            <li>
-                <a href="#about"  class="text-md px-4 py-2 text-slate-200 hover:text-amber-200 hover:rounded-2xl shadow-xl hover:shadow-blue-900 hover:scale-103 transition duration-500">About</a>
-            </li>
-            
-            <li>
-                <a href="#services"  class="text-md px-4 py-2 text-slate-200 hover:text-amber-200 hover:rounded-2xl shadow-xl hover:shadow-blue-900 hover:scale-103 transition duration-500">Pricing Plan</a>
-            </li>
-            <li>
-                <a href="#booking"  class="text-md px-4 py-2 text-slate-200 hover:text-amber-200 hover:rounded-2xl shadow-xl hover:shadow-blue-900 hover:scale-103 transition duration-500">Book Now</a>
-            </li>
-       </ul>
-                 <!-- back to top button -->
-       <a href="#" class="text-md px-4 py-2 text-slate-200 hover:text-amber-200 hover:rounded-2xl shadow-xl hover:shadow-blue-900 hover:scale-103 transition duration-500">Back to Top</a>
-    </div>
-</footer>
+    <footer class="bg-linear-to-tr from-slate-800 via-slate-900 to-zinc-700 rounded-lg shadow-sm m-4 dark:bg-gray-800">
+        <div class="container mx-auto pt-9 px-6 pb-12 flex max-md:flex-col justify-center items-center md:flex md:items-center md:justify-between">
+        <div class="flex flex-col max-md:items-center space-y-2">
+            <img src="./image/logo.png" alt="Our Shop logo" class="size-20">
+            <span class="text-center tracking-wide text-2xl text-slate-200 hover:text-slate-400 text tracking-wider text-pretty hover:underline font-extralight transition duration-500"> Contact Us For Yr Home Services </span>       
+            <h2 class="w-fit text-md px-4 py-2 text-slate-200 hover:text-amber-200 hover:rounded-2xl shadow-xl hover:shadow-blue-900 hover:scale-103 transition duration-500">WHATSAPP: 07058934640</h2>
+            <h2 class="w-fit text-md px-4 py-2 text-slate-200 hover:text-amber-200 hover:rounded-2xl shadow-xl hover:shadow-blue-900 hover:scale-103 transition duration-500">EMAIL: mayorsaloon@gmail.com</h2>
+        </div> 
+        <ul class="flex flex-wrap space-x-5 space-y-8 items-center md:mt-3 mt-6 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
+                <li>
+                    <a href="#about"  class="text-md px-4 py-2 text-slate-200 hover:text-amber-200 hover:rounded-2xl shadow-xl hover:shadow-blue-900 hover:scale-103 transition duration-500">About</a>
+                </li>
+                
+                <li>
+                    <a href="#services"  class="text-md px-4 py-2 text-slate-200 hover:text-amber-200 hover:rounded-2xl shadow-xl hover:shadow-blue-900 hover:scale-103 transition duration-500">Pricing Plan</a>
+                </li>
+                <li>
+                    <a href="#booking"  class="text-md px-4 py-2 text-slate-200 hover:text-amber-200 hover:rounded-2xl shadow-xl hover:shadow-blue-900 hover:scale-103 transition duration-500">Book Now</a>
+                </li>
+        </ul>
+                    <!-- back to top button -->
+        <a href="#" class="text-md px-4 py-2 text-slate-200 hover:text-amber-200 hover:rounded-2xl shadow-xl hover:shadow-blue-900 hover:scale-103 transition duration-500">Back to Top</a>
+        </div>
+    </footer>
 
 <!-- <script>
     const button = document.getElementById('dropdownButton');
@@ -451,10 +439,6 @@
 
 <!-- Script 1 -->
     <script>
-
-
-
-
         const menu = document.getElementById('menu');
         const closeMenu = document.getElementById('close-menu');
         const openMenu = document.getElementById('open-menu');
@@ -469,8 +453,7 @@
             menu.classList.add('max-md:w-full');
         });
 
-        
-
+                         //Header Gallary scroller
         const logos = [
             `<img src="./image/pricing1.png" alt="hero-bg" class="w-40 max-h-40 mx-14 rounded-lg transform translate-y-5 " >`,
             `<img src="./image/pricing2.png" alt="hero-bg" class="w-40 max-h-40 mx-14 rounded-lg">`,
@@ -484,19 +467,19 @@
             logoContainer.innerHTML += logo;
         });
 
-                    // Gallary scroller script
+                             //Bottom Gallary scroller script
         const cardsData = [
             {
-                image: './image/barber-frame.png',            
+                image: './image/img2.jpg',    
             },
             {
-                image: './image/barber-work.png',            
+                image: './image/pricing2.png',    
             },
             {
-                image: './image/blog1.png',
+                image: './image/img7.jpg',
             },
             {
-                image: './image/blog2.png',
+                image: './image/gallery1.png',
             },
         ];
 
